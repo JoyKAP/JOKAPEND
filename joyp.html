@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles de base pour réinitialiser le padding et les marges, définir la police et le box-sizing */
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Style de la section principale de la page */
+        .kiler {
+            height: 100vh;
+            width: 100%;
+            background-color: dimgray;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Style pour le conteneur de la navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 40px;
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+
+        /* Style du logo */
+        .logo {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: none;
+            transition: transform .4s;
+        }
+
+        /* Styles pour les éléments de texte dans le logo */
+        strong {
+            color: maroon;
+        }
+
+        span {
+            color: rgb(119, 119, 216);
+        }
+
+        /* Style pour les éléments de liste de navigation */
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li button {
+            background-color: rgb(119, 119, 216);
+            color: white;
+            text-transform: none;
+            font-weight: bold;
+            padding: 7px 14px;
+            border-radius: 30px;
+            border: none;
+            transition: transform .8s;
+            cursor: pointer;
+        }
+
+        /* Style pour les boîtes de lecture */
+        .boite-lecture {
+            color: rgb(119, 119, 216);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style pour la section avec un fond rouge */
+        .nole {
+            display: block;
+            background-color: rgb(155, 46, 55);
+            text-orientation: initial;
+            
+        }
+        .rounded-me{ 
+            border-radius: 50%;
+        }
+        /* Style pour le conteneur de contenu */
+        .contient {
+            margin-top: -200px;
+            margin-left: 700px;
+            margin-bottom: 20px;
+        }
+
+        /* Styles pour les en-têtes */
+        h1 {
+            color: beige;
+            margin: 20px 0;
+            font-size: 50px;
+        }
+
+        h3 {
+            color: beige;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        h4 {
+            color: rgb(119, 119, 216);
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+
+        /* Style pour la section de contact */
+        .compte {
+            background-color: dimgray;
+            border-radius: 100px;
+            border-left-width: 0px;
+            padding: 15px;
+            text-align:right;
+            margin-top: -200px;
+            margin-left: 20%;
+        }
+
+        .voir {
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+    </style>
+    <script src="Script.js"></script>
+    <title>BACKGROUND</title>
+</head>
+
+<body>
+    <div class="kiler">
+        <!-- Section de navigation -->
+        <nav>
+            <h2 class="logo"><strong>Bien</strong><span>venue</span> !</h2>
+            <ul>
+                <!-- Boutons pour ouvrir les différentes boîtes de lecture -->
+                <li><button onclick="ouvrirBoiteLecture('boite1')"><strong>Accueil</strong></button></li>
+                <li><button onclick="ouvrirBoiteLecture('boite2')"><strong>Compétences</strong></button></li>
+                <li><button onclick="ouvrirBoiteLecture('boite3')"><strong>Services</strong></button></li>
+                <li><button onclick="ouvrirBoiteLecture('boite4')"><strong>En savoir plus</strong></button></li>
+            </ul>
+        </nav>
+
+        <!-- Boîtes de lecture cachées -->
+        <div id="boite1" class="boite-lecture" style="display: none;">
+            <p><strong>Soyez le bienvenue une fois de plus messieurs/madames, <br> Joy KAPEND est comme une jeune plante
+                    ayant un bon encadrement, <br> et son avenir est très prometteur en ce qui concerne la programmation
+                    web et le génie logiciel, bien que vous veniez à peine de remarquer sa présence sur le web.</strong></p>
+            <button onclick="fermerBoiteLecture('boite1')">Fermer</button>
+        </div>
+
+        <div id="boite2" class="boite-lecture" style="display: none;">
+            <p><strong>Ses compétences sont basées sur : <br>
+                    -> Le développement de sites web <br> -> L'hébergement de sites web <br>
+                    -> Maintenance des systèmes d'exploitation <br> -> La réparation et le remplacement de matériel informatique.</strong></p>
+            <button onclick="fermerBoiteLecture('boite2')">Fermer</button>
+        </div>
+
+        <div id="boite3" class="boite-lecture" style="display: none;">
+            <p><strong>En termes de services, voici la liste : <br>
+                    -> Le développement de sites web : <br>
+                    Création de sites web statiques ou dynamiques en utilisant des langages de programmation comme
+                    HTML, CSS, JavaScript, PHP, etc... <br> 
+                    -> L'hébergement de sites web : <br>
+                    Héberger les sites web selon les préférences du client, à l'aide de sites d'hébergement gratuit ou
+                    payant avec un nom de domaine selon le choix d'hébergement. <br>
+                    -> Maintenance des systèmes d'exploitation : <br>
+                    Maintenance de systèmes d'exploitation WINDOWS et MAC OS, mise à jour, réinitialisation de mot de
+                    passe, configuration du réseau internet, installation des systèmes d'exploitation WINDOWS. <br>
+                    -> Réparation et remplacement de matériel informatique : <br>
+                    Réparation et remplacement de chargeurs, claviers, piles BIOS, écrans PC, souris, etc.</strong></p>
+            <button onclick="fermerBoiteLecture('boite3')">Fermer</button>
+        </div>
+        <div id="boite4" class="boite-lecture" style="display: none;">
+            <p><strong>Pour en savoir plus sur le programmeur Joy, veuillez laisser un message sur les réseaux sociaux ou
+                    contactez au numéro en bas de la page, merci de votre confiance et à bientôt.</strong></p>
+            <button onclick="fermerBoiteLecture('boite4')">Fermer</button>
+        </div>
+        <!-- Section avec un fond rouge et des informations supplémentaires -->
+        <div class="nole" >
+            <div>
+                <form > 
+                    <img src="me.png "  alt="me" class="rounded-me">
+                </form>
+            </div>
+            </div>
+            <div class="compte">
+                <div class="contient"> 
+                    <h4>Hello! Call me </h4>
+                    <h1>Joy <strong>Kapend</strong></h1>
+                    <h3 class="auto-typind"> I 'AM PROGRAMMER </h3>
+                </div>
+                <!-- Liens vers les réseaux sociaux et les contacts -->
+                <a href="mailto:joykapend511@gmail.com"> <img class="voir" src="mail1.jpeg" alt="Email"></a>
+                <a href="tel:+243994839991"><img class="voir" src="phone.jpeg" alt="Phone"></a>
+                <a href="https://www.facebook.com/joel.kavund"><img class="voir" src="face2.jpeg" alt="Facebook"></a>
+                <a href="https://api.whatsapp.com/send?phone=243994839991"><img class="voir" src="what.jpeg" alt="Whatsapp"></a>
+                <a href="https://t.me/Joykapend"><img class="voir" src="telegra.jpeg" alt="Telegram"></a>
+            </div>
+        </div>
+    </div>
+       <script>
+        // Fonction pour ouvrir une boîte de lecture spécifique et fermer les autres
+        function ouvrirBoiteLecture(idBoite) {
+            var boites = document.getElementsByClassName('boite-lecture');
+            // Parcourt toutes les boîtes et les ferme
+            for (var i = 0; i < boites.length; i++) {
+                boites[i].style.display = 'none';
+            }
+            // Ouvre la boîte spécifiée par l'identifiant
+            document.getElementById(idBoite).style.display = 'block';
+        }
+
+        // Fonction pour fermer une boîte de lecture spécifique
+        function fermerBoiteLecture(idBoite) {
+            document.getElementById(idBoite).style.display = 'none';
+        }
+
+       </script>
+</body>
+</html>
